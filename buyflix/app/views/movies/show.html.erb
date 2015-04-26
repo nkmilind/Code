@@ -1,0 +1,8 @@
+<p><b><%= @movie.name %></p></b>
+<div class="well">
+<p><%= @movie.summary %></p>
+</div>
+<% @roles.each do|role| %>
+<% actor=Actor.find_by(id: role.actor_id) %>
+<p><%= actor.name %> as <%= role.character_name %></p>
+<% end  %> 
