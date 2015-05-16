@@ -1,4 +1,4 @@
-class ArticleController < ApplicationController
+class ArticlesController < ApplicationController
   def index
   	@articles = Article.all  
   end
@@ -6,8 +6,8 @@ class ArticleController < ApplicationController
     @article = Article.new
   end
   def create
-  	Article.create(params["article"])
-    redirect_to article_index_url
+  	Article.create(params["articles"])
+    redirect_to articles_url
   end
   def show
   	@article = Article.find_by(id: params["id"]) 
